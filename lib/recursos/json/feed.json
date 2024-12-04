@@ -1,0 +1,172 @@
+{
+    "cursos": [
+        {
+            "_id": 1,
+            "datetime": "2019-11-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Curso Flutter",
+                "description": "Aprenda a desenvolver aplicativos móveis multiplataforma usando Flutter e Dart. Criar aplicativos rápidos e bonitos para Android e iOS.",
+                "price": 100.0,
+                "url": "https://cursos.flutter.com.br/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "flutter.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 2,
+            "datetime": "2019-10-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Python para Iniciantes",
+                "description": "Descubra como começar na programação com Python. Ideal para automação, ciência de dados e desenvolvimento web.",
+                "price": 199.90,
+                "url": "https://cursos.pythoniniciante.com/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "python.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 3,
+            "datetime": "2019-09-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Marketing Digital",
+                "description": "Entenda como criar estratégias de marketing digital, incluindo SEO, anúncios pagos e redes sociais, para alcançar mais clientes online.",
+                "price": 149.90,
+                "url": "https://marketingdigital.expert/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "marketing-digital.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 4,
+            "datetime": "2019-08-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Design Gráfico com Canva",
+                "description": "Aprenda a criar designs profissionais e chamativos usando o Canva, uma ferramenta intuitiva e poderosa para iniciantes e profissionais.",
+                "price": 129.90,
+                "url": "https://canvadesign.com/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "canva.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 5,
+            "datetime": "2019-07-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Desenvolvimento Web",
+                "description": "Construa páginas da web modernas e interativas dominando os pilares do desenvolvimento front-end. Indicado para quem quer criar sites do zero.",
+                "price": 249.0,
+                "url": "https://webdev.expert/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "web.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 6,
+            "datetime": "2019-06-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Edição de Vídeo",
+                "description": "Descubra as ferramentas básicas e avançadas do Adobe Premiere Pro para editar vídeos de forma profissional para YouTube e redes sociais.",
+                "price": 279.0,
+                "url": "https://videoedit.com.br/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "edicao-video.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 7,
+            "datetime": "2019-05-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Excel Avançado",
+                "description": "Domine recursos avançados do Excel, como tabelas dinâmicas, macros e funções complexas. Ideal para melhorar a produtividade no trabalho.",
+                "price": 99.0,
+                "url": "https://excelpro.com.br/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "excel.png"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": 8,
+            "datetime": "2019-11-01T12:00-0500",
+            "company": {
+                "name": "IFBA",
+                "logo": "ifba-divulgao.jpg"
+            },
+            "likes": 0,
+            "course": {
+                "name": "Curso de Fotografia",
+                "description": "Aprenda técnicas para tirar fotos incríveis usando apenas seu celular, desde a composição até a edição básica.",
+                "price": 89.0,
+                "url": "https://fotografiafacil.com/",
+                "blobs": [
+                    {
+                        "type": "image",
+                        "file": "fotografia.png"
+                    }
+                ]
+            }
+        }
+    ]
+}
