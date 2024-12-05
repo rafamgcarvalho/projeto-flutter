@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:cursos/autenticador.dart';
 import 'package:cursos/componentes/cursocard.dart';
 import 'package:cursos/estado.dart';
-// import 'package:flat_list/flat_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:toast/toast.dart';
