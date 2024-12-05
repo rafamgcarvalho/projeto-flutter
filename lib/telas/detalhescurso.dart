@@ -68,34 +68,23 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
     _carregarComentarios();
   }
 
-  // void _carregarCurso() {
-  //   setState(() {
-  //     _curso = _feedEstatico['cursos']
-  //         .firstWhere((curso) => curso["_id"] == estadoApp.idCurso);
-
-  //     _temCurso = _curso != null
-  //         ? _EstadoCurso.temCurso
-  //         : _EstadoCurso.semCurso;
-  //   });
-  // }
-
   void _carregarCurso() {
-  
-  if (_feedEstatico != null && _feedEstatico['cursos'] != null) {
-    setState(() {
-      _curso = _feedEstatico['cursos']
-          .firstWhere((curso) => curso["_id"] == int.tryParse(estadoApp.idCurso.toString()), orElse: () => null);
+    if (_feedEstatico != null && _feedEstatico['cursos'] != null) {
+      setState(() {
+        _curso = _feedEstatico['cursos'].firstWhere(
+            (curso) =>
+                curso["_id"] == int.tryParse(estadoApp.idCurso.toString()),
+            orElse: () => null);
 
-      _temCurso = _curso != null
-          ? _EstadoCurso.temCurso
-          : _EstadoCurso.semCurso;
-    });
-  } else {
-    setState(() {
-      _temCurso = _EstadoCurso.semCurso;
-    });
+        _temCurso =
+            _curso != null ? _EstadoCurso.temCurso : _EstadoCurso.semCurso;
+      });
+    } else {
+      setState(() {
+        _temCurso = _EstadoCurso.semCurso;
+      });
+    }
   }
-}
 
   void _carregarComentarios() {
     setState(() {
@@ -278,13 +267,15 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor:
+            Colors.white,
         title: Row(children: [
           GestureDetector(
             onTap: () {
               estadoApp.mostrarCursos();
             },
-            child: const Icon(Icons.arrow_back, size: 30),
+            child: const Icon(Icons.arrow_back,
+                size: 30, color: Color.fromARGB(255, 56, 55, 55)),
           ),
           const Spacer(),
           Row(children: [
@@ -293,7 +284,10 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                 padding: const EdgeInsets.only(left: 10.0, bottom: 5.0),
                 child: Text(
                   _curso["company"]["name"],
-                  style: const TextStyle(fontSize: 15),
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ))
           ]),
         ]),
@@ -313,9 +307,11 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                   });
                 },
                 itemBuilder: (context, pagePosition) {
-                  return Image.asset(
-                    'lib/recursos/imagens/cursos1.png',
-                    fit: BoxFit.cover,
+                  return ClipRRect(
+                    child: Image.asset(
+                      'lib/recursos/imagens/cursos1.png',
+                      fit: BoxFit.cover,
+                    ),
                   );
                 },
               ),
@@ -328,13 +324,11 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                               if (_curtiu) {
                                 setState(() {
                                   _curso['likes'] = _curso['likes'] - 1;
-
                                   _curtiu = false;
                                 });
                               } else {
                                 setState(() {
                                   _curso['likes'] = _curso['likes'] + 1;
-
                                   _curtiu = true;
                                 });
 
@@ -346,8 +340,9 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                             icon: Icon(_curtiu
                                 ? Icons.favorite
                                 : Icons.favorite_border),
-                            color: Colors.red,
-                            iconSize: 26)
+                            color:
+                                Colors.pinkAccent,
+                            iconSize: 30)
                         : const SizedBox.shrink(),
                     IconButton(
                         onPressed: () {
@@ -358,74 +353,88 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                               title: "Cursos Online", text: texto);
                         },
                         icon: const Icon(Icons.share),
-                        color: Colors.blue,
-                        iconSize: 26)
+                        color: Colors.green,
+                        iconSize: 30)
                   ]))
             ]),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: PageViewDotIndicator(
               currentItem: _slideSelecionado,
               count: 3,
               unselectedColor: Colors.black26,
-              selectedColor: Colors.blue,
-              duration: const Duration(milliseconds: 200),
+              selectedColor: Colors.deepOrange,
+              duration: const Duration(milliseconds: 250),
               boxShape: BoxShape.circle,
             ),
           ),
           Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Text(
-                      _curso["course"]["name"],
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 13),
-                    )),
-                Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(_curso["course"]["description"],
-                        style: const TextStyle(fontSize: 12))),
-                Padding(
-                    padding: const EdgeInsets.only(left: 8.0, bottom: 6.0),
-                    child: Row(children: [
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    _curso["course"]["name"],
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.black87), 
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    _curso["course"]["description"],
+                    style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.black54), 
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
                       Text(
                         "R\$ ${_curso["course"]["price"].toString()}",
                         style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.green),
                       ),
-                      Padding(
-                          padding: const EdgeInsets.only(left: 6.0),
-                          child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Icon(
-                                  Icons.favorite_rounded,
-                                  color: Colors.red,
-                                  size: 18,
-                                ),
-                                Text(
-                                  _curso["likes"].toString(),
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12),
-                                ),
-                              ]))
-                    ]))
-              ],
+                      const Spacer(),
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.favorite_rounded,
+                              color: Colors.red,
+                              size: 20,
+                            ),
+                            Text(
+                              _curso["likes"].toString(),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14),
+                            ),
+                          ])
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-          const Center(
-              child: Text(
-            "Comentários",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-          )),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "Comentários",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+          ),
           usuarioLogado
               ? Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextField(
                       controller: _controladorNovoComentario,
                       keyboardType: TextInputType.text,
@@ -442,7 +451,8 @@ class _DetalhesCursoState extends State<DetalhesCurso> {
                                 _adicionarComentario();
                               },
                               child: const Icon(Icons.send,
-                                  color: Colors.black87)))))
+                                  color: Colors.blueAccent))))
+                  )
               : const SizedBox.shrink(),
           _temComentarios
               ? _exibirComentarios()
